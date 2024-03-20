@@ -5,7 +5,7 @@ const nextConfig = {
       {
         hostname: "localhost",
         pathname: "**",
-        port: "3000" || "https://digitalhippo-cyxy.onrender.com",
+        port: "3000",
         protocol: "http",
       },
     ],
