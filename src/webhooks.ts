@@ -1,6 +1,6 @@
 import express from "express";
-import { stripe } from "./lib/stripe";
 import { WebhookRequest } from "./server";
+import { stripe } from "./lib/stripe";
 import type Stripe from "stripe";
 import { getPayLoadClient } from "./get-payload";
 import { Product } from "./payload-types";
@@ -66,7 +66,7 @@ export const stripeWebhookHandler = async (
 
     const [order] = orders;
 
-    if (!user) return res.status(404).json({ error: "No such order exists." });
+    if (!order) return res.status(404).json({ error: "No such order exists." });
 
     await payload.update({
       collection: "orders",
@@ -83,8 +83,8 @@ export const stripeWebhookHandler = async (
     // send receipt
     try {
       const data = await resend.emails.send({
-        from: "DigitalHippo <hello@joshtriedcoding.com>",
-        to: [user.email],
+        from: "onboarding@resend.dev",
+        to: "md.dr31.19@gmail.com",
         subject: "Thanks for your order! This is your receipt.",
         html: ReceiptEmailHtml({
           date: new Date(),
@@ -101,6 +101,3 @@ export const stripeWebhookHandler = async (
 
   return res.status(200).send();
 };
-function getPayloadClient() {
-  throw new Error("Function not implemented.");
-}
