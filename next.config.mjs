@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["localhost", "digitalhippo-production.up.railway.app"],
+    domains: ["localhost", "https://digitalhippo-7lpc.onrender.com"],
     // remotePatterns: [
     //   {
     //     hostname: "localhost",
