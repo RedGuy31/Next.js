@@ -32,7 +32,7 @@ export const EmailTemplate = ({
       <Body style={main}>
         <Container style={container}>
           <Img
-            src={`${process.env.NEXT_PUBLIC_SERVER_URL}/checkout-thank-you.jpg`}
+            src={`${process.env.NEXT_PUBLIC_SERVER_URL}/chechout-thank-you.jpg`}
             width="150"
             height="150"
             alt="DigitalHippo"
